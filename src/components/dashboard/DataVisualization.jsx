@@ -7,7 +7,8 @@ import 'echarts/lib/component/title';
 import 'echarts/lib/component/visualMap';
 
 import Dashboard from '../dashboard';
-import data from './datamock.js';
+// import data from './datamock.js';
+import data2 from './data_vis.json';
 
 // Styles
 import SelectField from '../form/selectField';
@@ -71,7 +72,7 @@ const options = {
       //         borderColor: '#fff'
       //     }
       // },
-      data,
+      data: JSON.parse(data2.data),
     },
   ],
 };
