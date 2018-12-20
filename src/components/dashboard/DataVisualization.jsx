@@ -7,7 +7,7 @@ import 'echarts/lib/component/title';
 import 'echarts/lib/component/visualMap';
 
 import Dashboard from '../dashboard';
-// import data from './datamock.js';
+import data from './datamock.js';
 import data2 from './data_vis.json';
 
 // Styles
@@ -29,8 +29,6 @@ const items = ['FM-1518808', 'FM-121212', 'FM-123128'];
 const options = {
   title: {
     text: 'PLOT',
-    left: 'center',
-    top: 0,
   },
   visualMap: {
     min: 15202,
@@ -40,7 +38,7 @@ const options = {
     right: 10,
     top: 'center',
     text: ['HIGH', 'LOW'],
-    calculable: true,
+    // calculable: true,
     inRange: {
       color: ['#f2c31a', '#24b7f2'],
     },
@@ -72,7 +70,8 @@ const options = {
       //         borderColor: '#fff'
       //     }
       // },
-      data: JSON.parse(data2.data),
+      // data: JSON.parse(data2.data),
+      data,
     },
   ],
 };
