@@ -7,8 +7,9 @@ import {withStyles} from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-// import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
+import {ReactComponent as DataVisLogo} from '../../assets/dv.svg';
+import {ReactComponent as VirtualSensorLogo} from '../../assets/vs.svg';
+import {ReactComponent as PerformanceLogo} from '../../assets/perf.svg';
 
 const drawerWidth = 240;
 
@@ -28,19 +29,15 @@ const styles = theme => ({
     paddingRight: 0,
     paddingTop: 0,
     paddingBottom: 0,
+    paddingLeft: 7,
     backgroundColor: theme.palette.secondary.dark,
-    '& $itemTextPrimary': {
-      '&:hover': {
-        color: theme.palette.secondary.dark,
-      },
-    },
+    color: '#ffffff',
+    fill: '#ffffff',
     '&:hover': {
       backgroundColor: theme.palette.primary.main,
       color: `${theme.palette.secondary.dark} !important`,
+      fill: `${theme.palette.secondary.dark} !important`,
     },
-  },
-  listItemSelected: {
-    backgroundColor: theme.palette.primary.main,
   },
   itemTextRoot: {
     padding: '0 0',
@@ -49,9 +46,6 @@ const styles = theme => ({
     color: '#fff',
     fontWeight: 500,
     fontSize: '0.9rem',
-    '&:hover': {
-      color: theme.palette.secondary.dark,
-    },
   },
 });
 
@@ -72,61 +66,79 @@ class Sidebar extends Component {
             button
             key="1"
             component={NavLink}
+            activeClassName="active"
+            activeStyle={{
+              color: '#2d2e30',
+              backgroundColor: '#35afaf',
+              fill: '#2d2e30',
+            }}
             to="/dashboard/data_visualization"
             classes={{
               root: classes.listItemRoot,
               selected: classes.listItemSelected,
             }}
           >
-            {/* <ListItemIcon>-</ListItemIcon> */}
-            <ListItemText
-              classes={{
-                root: classes.itemTextRoot,
-                primary: classes.itemTextPrimary,
+            <DataVisLogo
+              style={{
+                height: '22px',
+                margin: '0 8px',
+                color: 'inherit',
+                fill: 'inherit',
               }}
-            >
-              Data Visualization
-            </ListItemText>
+            />
+            Data Visualization
           </ListItem>
           <ListItem
             button
             key="2"
             component={NavLink}
+            activeClassName="active"
+            activeStyle={{
+              color: '#2d2e30',
+              backgroundColor: '#35afaf',
+              fill: '#2d2e30',
+            }}
             to="/dashboard/virtual_sensor"
             classes={{
               root: classes.listItemRoot,
               selected: classes.listItemSelected,
             }}
           >
-            {/* <ListItemIcon>-</ListItemIcon> */}
-            <ListItemText
-              classes={{
-                root: classes.itemTextRoot,
-                primary: classes.itemTextPrimary,
+            <VirtualSensorLogo
+              style={{
+                height: '20px',
+                margin: '0 4px',
+                color: 'inherit',
+                fill: 'inherit',
               }}
-            >
-              Virtual Sensor
-            </ListItemText>
+            />
+            Virtual Sensor
           </ListItem>
           <ListItem
             button
             key="3"
             component={NavLink}
+            activeClassName="active"
+            activeStyle={{
+              color: '#2d2e30',
+              backgroundColor: '#35afaf',
+              fill: '#2d2e30',
+            }}
             to="/dashboard/performance"
             classes={{
               root: classes.listItemRoot,
               selected: classes.listItemSelected,
             }}
           >
-            {/* <ListItemIcon>-</ListItemIcon> */}
-            <ListItemText
-              classes={{
-                root: classes.itemTextRoot,
-                primary: classes.itemTextPrimary,
+            <PerformanceLogo
+              style={{
+                height: '22px',
+                margin: '0 8px',
+                color: 'inherit',
+                fill: 'inherit',
               }}
-            >
-              Performance
-            </ListItemText>
+            />
+            Performance
           </ListItem>
         </List>
       </Drawer>

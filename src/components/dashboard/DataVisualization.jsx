@@ -80,17 +80,20 @@ class DataVisualization extends Component {
   render() {
     return (
       <Dashboard>
-        <div className="d-flex align-items-center">
-          <Typography variant="h6" color="primary">
-            SENSOR
-          </Typography>
-          <SelectField items={items} name="sensor" />
-          <div style={{width: '150px'}} />
-          <Typography variant="h6" color="primary">
-            PERIOD
-          </Typography>
-          <SelectField label="Start" items={items} name="period_start" />
-          <SelectField label="End" items={items} name="period_end" />
+        <div className="d-flex align-items-center justify-content-around">
+          <div className="d-flex align-items-center">
+            <Typography variant="h6" color="primary">
+              SENSOR
+            </Typography>
+            <SelectField items={items} name="sensor" />
+          </div>
+          <div className="d-flex align-items-center">
+            <Typography variant="h6" color="primary">
+              PERIOD
+            </Typography>
+            <SelectField label="Start" items={items} name="period_start" />
+            <SelectField label="End" items={items} name="period_end" />
+          </div>
         </div>
         <Paper className={this.props.classes.root} elevation={1}>
           <ReactEchartsCore
