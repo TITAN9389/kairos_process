@@ -124,7 +124,12 @@ class LoginForm extends Component {
                 Forgot password ?
               </Grid>
               <Grid item xs={5}>
-                <Button variant="contained" className={classes.button}>
+                <Button
+                  variant="contained"
+                  className={classes.button}
+                  component={Link}
+                  to="/dashboard"
+                >
                   Login
                 </Button>
               </Grid>

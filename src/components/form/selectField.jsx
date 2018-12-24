@@ -23,7 +23,11 @@ const styles = theme => ({
 });
 
 class SelectField extends Component {
-  state = {};
+  state = {
+    sensor: 'FM-1518808',
+    ref_model: 'FAT',
+    rpm: '1500',
+  };
 
   handleChange = event => {
     this.setState({[event.target.name]: event.target.value});

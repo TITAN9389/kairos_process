@@ -6,12 +6,13 @@ import 'echarts/lib/component/tooltip';
 import 'echarts/lib/component/title';
 import 'echarts/lib/component/visualMap';
 
-import Dashboard from '../dashboard';
-import data from './datamock.js';
-import data2 from './data_vis.json';
+import Dashboard from '../index';
+import data from '../datamock.js';
+// import data2 from '../data_vis.json';
 
 // Styles
-import SelectField from '../form/selectField';
+import SelectField from '../../form/selectField';
+import DateField from '../../form/dateField';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import {withStyles} from '@material-ui/core/styles';
@@ -33,14 +34,15 @@ const options = {
   visualMap: {
     min: 15202,
     max: 159980,
-    dimension: 1,
-    orient: 'vertical',
+    // dimension: 0,
+    // orient: 'horizontal',
+    // inverse: true,
     right: 10,
     top: 'center',
     text: ['HIGH', 'LOW'],
     // calculable: true,
     inRange: {
-      color: ['#f2c31a', '#24b7f2'],
+      color: ['#cc342c', '#2735b2'],
     },
   },
   tooltip: {
@@ -64,13 +66,6 @@ const options = {
       name: 'plot area',
       type: 'scatter',
       symbolSize: 5,
-      // itemStyle: {
-      //     normal: {
-      //         borderWidth: 0.2,
-      //         borderColor: '#fff'
-      //     }
-      // },
-      // data: JSON.parse(data2.data),
       data,
     },
   ],
@@ -90,8 +85,8 @@ class DataVisualization extends Component {
             <Typography variant="h6" color="primary">
               PERIOD
             </Typography>
-            <SelectField label="Start" items={items} name="period_start" />
-            <SelectField label="End" items={items} name="period_end" />
+            <DateField label="Start" name="period_start" />
+            <DateField label="End" name="period_end" />
           </div>
         </div>
         <Paper className={this.props.classes.root} elevation={1}>

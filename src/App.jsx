@@ -9,9 +9,9 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import {MuiThemeProvider} from '@material-ui/core/styles';
 
 import LoginPage from './components/registration/LoginPage';
-import DataVisualizationTab from './components/dashboard/DataVisualization';
-import VirtualSensorTab from './components/dashboard/VirtualSensor';
-import PerformanceTab from './components/dashboard/Performance';
+import DataVisualizationTab from './components/dashboard/dataVisualization';
+import VirtualSensorTab from './components/dashboard/virtualSensor';
+import PerformanceTab from './components/dashboard/performance';
 import NotFound from './components/NotFound';
 import theme from './components/styles/theme';
 
